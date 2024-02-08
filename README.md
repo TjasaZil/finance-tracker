@@ -26,7 +26,7 @@ This design approach is carefully developed to harmonize visual appeal with prac
 ### Typography
 
 - **[Lato](https://fonts.google.com/specimen/Lato)**
-- **[Montserrat](https://fonts.google.com/specimen/Montserrat?query=mon)**
+- **[Open Sans](https://fonts.google.com/specimen/Open+Sans?query=open+sans)**
 
 ## Project Structure
 
