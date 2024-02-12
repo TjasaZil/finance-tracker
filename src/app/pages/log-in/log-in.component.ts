@@ -33,5 +33,6 @@ export class LogInComponent implements OnInit {
   goToSignup() {
     this.router.navigateByUrl('/sign-up');
   }
+
   logWithGoogle() {}
 }
