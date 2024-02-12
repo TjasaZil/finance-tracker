@@ -15,11 +15,6 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class LogInComponent implements OnInit {
   constructor(private router: Router, private authservice: AuthService) {}
   ngOnInit(): void {}
-
-  /*submitLogin() {
-    console.log('I am logged in');
-  }*/
-
   loginCredentials = {
     email: '',
     password: '',
@@ -29,8 +24,17 @@ export class LogInComponent implements OnInit {
     useSubmitBehavior: true,
   };
 
-  loginWithEmailAndPassword() {
-    //this.authservice.signInwithEmailAndPassword(email, password).then;
+  loginWithEmailAndPassword(e: any) {
+    e.preventDefault();
+    const { email, password } = this.loginCredentials;
+    this.authservice
+      .signInwithEmailAndPassword({ email, password })
+      .then((response: any) => {
+        this.router.navigateByUrl('/dashboard');
+      })
+      .catch((error: any) => {
+        alert(error);
+      });
   }
 
   goToSignup() {

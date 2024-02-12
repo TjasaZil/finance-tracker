@@ -6,7 +6,7 @@ import { DxButtonModule } from 'devextreme-angular';
   standalone: true,
   imports: [DxButtonModule],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  styleUrl: '../../app.component.scss',
 })
 export class DashboardComponent implements OnInit {
   constructor(private router: Router) {}
