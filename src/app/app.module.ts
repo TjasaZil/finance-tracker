@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+/**DevExtreme*/
 import { DxFormModule } from 'devextreme-angular';
 import { DxChartModule } from 'devextreme-angular';
 import { DxButtonModule } from 'devextreme-angular';
+
+/**Firebase*/
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from './environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +21,8 @@ import { DxButtonModule } from 'devextreme-angular';
     DxFormModule,
     DxChartModule,
     DxButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
