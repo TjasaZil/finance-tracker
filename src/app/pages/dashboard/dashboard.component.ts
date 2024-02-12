@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DxButtonModule } from 'devextreme-angular';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [DxButtonModule],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit {
+  constructor(private router: Router) {}
+  ngOnInit(): void {}
+  goToLogin() {
+    this.router.navigateByUrl('/');
+  }
 }
