@@ -1,0 +1,32 @@
+@import "./scss/mixins/flex";
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  border: none;
+  outline: 1px solid red;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  /*font-family: "Advent Pro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;*/
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+.main-container {
+  padding: 0px 40px;
+  @include flex(column, center, center);
+}

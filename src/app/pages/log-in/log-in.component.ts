@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [DxFormModule, DxChartModule, DxButtonModule],
   templateUrl: './log-in.component.html',
-  styleUrl: './log-in.component.scss',
+  styleUrl: '../../app.component.scss',
 })
 export class LogInComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit(): void {}
 
-  login() {
+  submitLogin() {
     console.log('I am logged in');
   }
 
@@ -27,12 +27,11 @@ export class LogInComponent implements OnInit {
     text: 'Log In',
     useSubmitBehavior: true,
   };
-  /*signupButtonOptions = {
-    text: 'Sign Up',
-    useSubmitBehavior: false,
-  };*/
-  authenticateCredentials() {}
+
+  loginWithEmailAndPassword() {}
+
   goToSignup() {
     this.router.navigateByUrl('/sign-up');
   }
+  logWithGoogle() {}
 }
