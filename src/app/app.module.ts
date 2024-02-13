@@ -26,7 +26,7 @@ import { EffectsModule } from '@ngrx/effects';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent],

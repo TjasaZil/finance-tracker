@@ -1,24 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { DxButtonModule } from 'devextreme-angular';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { DxChartModule } from 'devextreme-angular';
+import { DxPieChartModule } from 'devextreme-angular';
+import { NavigationComponent } from 'src/app/components/navigation/navigation.component';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [DxButtonModule],
+  imports: [DxButtonModule, DxChartModule, DxPieChartModule, NavigationComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: '../../app.component.scss',
 })
-export class DashboardComponent implements OnInit {
-  constructor(private router: Router, private afAuth:AngularFireAuth) {}
-  ngOnInit(): void {}
-  goToLogin() {
-    this.afAuth.signOut().then(() => {
-      this.router.navigate(['/']); // Redirect to login or home page
-    }).catch(error => {
-      // Handle any errors here
-      console.error('Logout error', error);
-    });
-  }
+export class DashboardComponent  {
+  
   }
 
