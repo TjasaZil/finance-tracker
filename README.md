@@ -1,5 +1,7 @@
 # FinanceTracker
 
+Finance tracker is a simple financial app that lets the user log into the dashboard and track different expenses/income, setting budgets, visualising expenses/income via graphs and more.
+
 ## Technologies used
 
 1. [**Angular**](https://angular.io/)
@@ -38,8 +40,11 @@ This design approach is carefully developed to harmonize visual appeal with prac
 
 ## Functionalities
 
-- **authentication:**
-- **expence tracking:**
-- **categorizing expenses:**
-- **visualizing expenses and income:**
-- **setting budgets:**
+### Authentication
+
+Used Firebas authentication to handle registration and login using email/password or login using Google. Created Auth services  for sign up,, login and log in with Google. Added Auth guards to all the routes except Log in and Sign up.
+
+### Expence tracking
+### Categorizing expenses
+### Visualizing expenses and income
+### Setting budgets
