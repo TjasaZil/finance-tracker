@@ -1,0 +1,114 @@
+{
+    "categories":[
+        {
+          "id": "cat1",
+          "name": "Groceries",
+          "description": "All food-related purchases",
+          "imageUrl": ""
+        },
+        {
+          "id": "cat2",
+          "name": "Transport",
+          "description": "Expenses on public and private transport",
+          "imageUrl": ""
+        },
+        {
+          "id": "cat3",
+          "name": "Dining",
+          "description": "Restaurant and cafe expenses",
+          "imageUrl": ""
+        },
+        {
+          "id": "cat4",
+          "name": "Education",
+          "description": "Expenses on books, courses, and other educational materials",
+          "imageUrl": ""
+        },
+        {
+          "id": "cat5",
+          "name": "Health",
+          "description": "Medical expenses and health supplements",
+          "imageUrl": ""
+        }
+      ],
+      "expenses":[
+        {
+          "id": "exp1",
+          "userId": "user1",
+          "amount": 150.00,
+          "categoryId": "cat1",
+          "date": "2024-02-14",
+          "description": "Grocery Shopping"
+        },
+        {
+          "id": "exp2",
+          "userId": "user2",
+          "amount": 75.00,
+          "categoryId": "cat2",
+          "date": "2024-02-15",
+          "description": "Public Transport"
+        },
+        {
+          "id": "exp3",
+          "userId": "user1",
+          "amount": 200.00,
+          "categoryId": "cat3",
+          "date": "2024-02-16",
+          "description": "Restaurant"
+        },
+        {
+          "id": "exp4",
+          "userId": "user2",
+          "amount": 50.00,
+          "categoryId": "cat4",
+          "date": "2024-02-17",
+          "description": "Books"
+        },
+        {
+          "id": "exp5",
+          "userId": "user1",
+          "amount": 120.00,
+          "categoryId": "cat5",
+          "date": "2024-02-18",
+          "description": "Healthcare"
+        }
+      ],
+      "incomes": [
+        {
+          "id": "inc1",
+          "userId": "user1",
+          "amount": 2000.00,
+          "description": "Salary",
+          "date": "2024-02-07"
+        },
+        {
+          "id": "inc2",
+          "userId": "user2",
+          "amount": 1500.00,
+          "description": "Freelancing",
+          "date": "2024-02-14"
+        },
+        {
+          "id": "inc3",
+          "userId": "user1",
+          "amount": 500.00,
+          "description": "Investment Returns",
+          "date": "2024-02-21"
+        },
+        {
+          "id": "inc4",
+          "userId": "user2",
+          "amount": 750.00,
+          "description": "Gift",
+          "date": "2024-02-28"
+        },
+        {
+          "id": "inc5",
+          "userId": "user1",
+          "amount": 250.00,
+          "description": "Lottery Winnings",
+          "date": "2024-03-07"
+        }
+      ]
+      
+}
