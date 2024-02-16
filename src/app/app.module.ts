@@ -17,6 +17,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { categoryReducer } from './state/category/category.reducers';
 import { CategoryEffects } from './state/category/category.effects';
+import { ExpenseEffects } from './state/expense/expense.effects';
+import { expenseReducer } from './state/expense/expense.reducers';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,8 +29,8 @@ import { CategoryEffects } from './state/category/category.effects';
     DxButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    StoreModule.forRoot({ category: categoryReducer }, {}),
-    EffectsModule.forRoot([CategoryEffects]),
+    StoreModule.forRoot({ category: categoryReducer, expense: expenseReducer }),
+    EffectsModule.forRoot([CategoryEffects, ExpenseEffects]),
     HttpClientModule,
   ],
   providers: [],
