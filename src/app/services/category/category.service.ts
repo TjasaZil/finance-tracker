@@ -28,8 +28,13 @@ export class CategoryService {
     return this.http.put<Category>(this.baseURL + '/' + category.id, category);
   }
 
-  //deletes category
-  deleteCategory(category: Category): Observable<Category> {
-    return this.http.delete<Category>(this.baseURL + '/' + category.id);
+  /**deletes category
+  deleteCategory(id: string): Observable<Category> {
+    return this.http.delete<Category>(`${this.baseURL}/${id}`);
+
+  }*/
+  deleteCategory(id: string): Observable<Category> {
+    const url = `https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/categories/${id}.json`;
+    return this.http.delete<Category>(url);
   }
 }

@@ -115,23 +115,29 @@ export class DashboardComponent implements OnInit {
 
   /** CHANGE */
   changeCategory() {
+    console.log('change');
     this.store.dispatch(changeCategory());
   }
   changeExpense() {
+    console.log('change');
     this.store.dispatch(changeExpense());
   }
   changeIncome() {
+    console.log('change');
     this.store.dispatch(changeIncome());
   }
 
   /** DELETE */
-  deleteCategory() {
-    this.store.dispatch(deleteCategory({ id: this.category.id }));
+  deleteCategory(id: string) {
+    console.log('delete ' + id);
+    this.store.dispatch(deleteCategory({ id }));
   }
-  deleteExpense() {
-    this.store.dispatch(deleteExpense({ id: this.expense.id }));
+  deleteExpense(id: string) {
+    console.log('delete ' + id);
+    this.store.dispatch(deleteExpense({ id }));
   }
-  deleteIncome() {
-    this.store.dispatch(deleteIncome({ id: this.income.id }));
+  deleteIncome(id: string) {
+    console.log('delete ' + id);
+    this.store.dispatch(deleteIncome({ id }));
   }
 }

@@ -38,7 +38,19 @@ export class ExpenseEffects {
       )
     )
   );
-
+  deleteExpense$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ExpenseActions.deleteExpense),
+      mergeMap((action) =>
+        this.expenseService.deleteExpense(action.id).pipe(
+          map(() => ExpenseActions.deleteExpenseSuccess({ id: action.id })),
+          catchError((error) =>
+            of(ExpenseActions.deleteExpenseFailure({ error }))
+          )
+        )
+      )
+    )
+  );
   constructor(
     private actions$: Actions,
     private expenseService: ExpenseService

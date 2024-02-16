@@ -29,7 +29,7 @@ export class BudgetService {
   }
 
   //deletes budget
-  deleteBudget(budget: Budget): Observable<Budget> {
-    return this.http.delete<Budget>(this.baseURL + '/' + budget.id);
+  deleteBudget(id: string): Observable<Budget> {
+    return this.http.delete<Budget>(`${this.baseURL}/${id}`);
   }
 }

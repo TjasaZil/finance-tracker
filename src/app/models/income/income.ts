@@ -1,5 +1,5 @@
 export class Income {
-  id?: string;
+  id: string = '';
   userId?: string;
   amount?: number;
   categoryId?: string;

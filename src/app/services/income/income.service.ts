@@ -26,8 +26,12 @@ export class IncomeService {
     return this.http.put<Income>(this.baseURL + '/' + income.id, income);
   }
 
-  //deletes income
+  /**deletes income
   deleteIncome(income: Income): Observable<Income> {
     return this.http.delete<Income>(this.baseURL + '/' + income.id);
+  }*/
+  deleteIncome(id: string): Observable<Income> {
+    const url = `https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/incomes/${id}.json`;
+    return this.http.delete<Income>(url);
   }
 }

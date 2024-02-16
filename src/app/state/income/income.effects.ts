@@ -30,7 +30,19 @@ export class IncomeEffects {
       )
     )
   );
-
+  deleteIncome$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(IncomeActions.deleteIncome),
+      mergeMap((action) =>
+        this.incomeService.deleteIncome(action.id).pipe(
+          map(() => IncomeActions.deleteIncomeSuccess({ id: action.id })),
+          catchError((error) =>
+            of(IncomeActions.deleteIncomeFailure({ error }))
+          )
+        )
+      )
+    )
+  );
   constructor(
     private actions$: Actions,
     private incomeService: IncomeService

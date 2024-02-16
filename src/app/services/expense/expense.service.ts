@@ -28,8 +28,12 @@ export class ExpenseService {
     return this.http.put<Expense>(this.baseURL + '/' + expense.id, expense);
   }
 
-  //deletes expense
+  /**deletes expense
   deleteExpense(expense: Expense): Observable<Expense> {
     return this.http.delete<Expense>(this.baseURL + '/' + expense.id);
+  }*/
+  deleteExpense(id: string): Observable<Expense> {
+    const url = `https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/expenses/${id}.json`;
+    return this.http.delete<Expense>(url);
   }
 }
