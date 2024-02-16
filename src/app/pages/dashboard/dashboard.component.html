@@ -18,6 +18,15 @@
         <p>{{ expense.description }}</p>
       </div>
     </div>
+    <h2>Income</h2>
+    <div *ngIf="incomes$ | async as incomes">
+      <div *ngFor="let income of incomes">
+        <p>{{ income.amount }}</p>
+        <p>{{ income.date }}</p>
+        <p>{{ income.categoryId }}</p>
+        <p>{{ income.description }}</p>
+      </div>
+    </div>
     <!--<dx-pie-chart> </dx-pie-chart>-->
   </section>
 </div>

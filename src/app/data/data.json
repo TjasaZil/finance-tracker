@@ -78,6 +78,7 @@
       "id": "inc1",
       "userId": "user1",
       "amount": 2000.0,
+      "categoryId": "cat1",
       "description": "Salary",
       "date": "2024-02-07"
     },
@@ -85,6 +86,7 @@
       "id": "inc2",
       "userId": "user2",
       "amount": 1500.0,
+      "categoryId": "cat2",
       "description": "Freelancing",
       "date": "2024-02-14"
     },
@@ -92,6 +94,7 @@
       "id": "inc3",
       "userId": "user1",
       "amount": 500.0,
+      "categoryId": "cat3",
       "description": "Investment Returns",
       "date": "2024-02-21"
     },
@@ -99,12 +102,14 @@
       "id": "inc4",
       "userId": "user2",
       "amount": 750.0,
+      "categoryId": "cat4",
       "description": "Gift",
       "date": "2024-02-28"
     },
     {
       "id": "inc5",
       "userId": "user1",
+      "categoryId": "cat5",
       "amount": 250.0,
       "description": "Lottery Winnings",
       "date": "2024-03-07"

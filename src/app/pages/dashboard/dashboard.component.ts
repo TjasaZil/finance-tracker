@@ -22,6 +22,14 @@ import { Observable } from 'rxjs';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
 import { Expense } from 'src/app/models/expense/expense';
 import { selectAllExpenses } from 'src/app/state/expense/expense.selectors';
+import { Income } from 'src/app/models/income/income';
+import { selectAllIncomes } from 'src/app/state/income/income.selectors';
+import {
+  addIncome,
+  showIncome,
+  deleteIncome,
+  changeIncome,
+} from 'src/app/state/income/income.actions';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -40,6 +48,7 @@ import { selectAllExpenses } from 'src/app/state/expense/expense.selectors';
 export class DashboardComponent implements OnInit {
   categories$: Observable<Category[]>;
   expenses$: Observable<Expense[]>;
+  incomes$: Observable<Income[]>;
   public category = {
     id: '',
     name: '',
@@ -54,15 +63,25 @@ export class DashboardComponent implements OnInit {
     date: new Date(),
     description: '',
   };
+  public income = {
+    id: '',
+    userId: '',
+    amount: 0,
+    date: new Date(),
+    description: '',
+  };
   constructor(private store: Store) {
     this.categories$ = this.store.select(selectAllCategories);
     this.expenses$ = this.store.select(selectAllExpenses);
+    this.incomes$ = this.store.select(selectAllIncomes);
   }
   ngOnInit(): void {
     this.store.dispatch(showCategories());
     this.store.dispatch(showExpenses());
+    this.store.dispatch(showIncome());
   }
 
+  /** ADD */
   addCategory() {
     this.store.dispatch(addCategory({ category: this.category }));
     this.category = {
@@ -83,12 +102,36 @@ export class DashboardComponent implements OnInit {
       description: '',
     };
   }
-  changeCategory() {}
-  changeExpense() {}
+  addIncome() {
+    this.store.dispatch(addIncome({ income: this.income }));
+    this.income = {
+      id: '',
+      userId: '',
+      amount: 0,
+      date: new Date(),
+      description: '',
+    };
+  }
+
+  /** CHANGE */
+  changeCategory() {
+    this.store.dispatch(changeCategory());
+  }
+  changeExpense() {
+    this.store.dispatch(changeExpense());
+  }
+  changeIncome() {
+    this.store.dispatch(changeIncome());
+  }
+
+  /** DELETE */
   deleteCategory() {
     this.store.dispatch(deleteCategory({ id: this.category.id }));
   }
   deleteExpense() {
     this.store.dispatch(deleteExpense({ id: this.expense.id }));
+  }
+  deleteIncome() {
+    this.store.dispatch(deleteIncome({ id: this.income.id }));
   }
 }
