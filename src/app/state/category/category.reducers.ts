@@ -3,13 +3,13 @@ import * as CategoryActions from './category.actions';
 import { Category } from 'src/app/models/category/category';
 
 //how the State looks
-export interface State {
+export interface CategoryState {
   category: Category[];
   error: any;
 }
 
 //state of our app before any actions are made
-export const initialState: State = {
+export const initialState: CategoryState = {
   category: [],
   error: null,
 };
@@ -39,6 +39,11 @@ export const categoryReducer = createReducer(
     error,
   })),
   //categories changed success
+  on(CategoryActions.changeCategorySuccess, (state, { category }) => ({
+    ...state,
+    category: category,
+    error: null,
+  })),
   //categories changed failure
   on(CategoryActions.changeCategoryFailure, (state, { error }) => ({
     ...state,

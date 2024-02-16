@@ -6,7 +6,7 @@ import { Category } from 'src/app/models/category/category';
 //add category
 export const addCategory = createAction(
   '[Category] add Category',
-  props<{ category: Category }>
+  props<{ category: Category }>()
 );
 export const addCategorySuccess = createAction(
   '[Category] add Category Success',
@@ -30,7 +30,10 @@ export const showCategoriesFailure = createAction(
 
 //change category
 export const changeCategory = createAction('[Category] change Category');
-//export const changeCategorySuccess=createAction();
+export const changeCategorySuccess = createAction(
+  '[Category] change Category Success',
+  props<{ category: Category[] }>()
+);
 export const changeCategoryFailure = createAction(
   '[Category] change Category Failure',
   props<{ error: any }>()
@@ -38,8 +41,8 @@ export const changeCategoryFailure = createAction(
 
 //delete category
 export const deleteCategory = createAction(
-  '[Category] delete Category'
-  // props<{ id: string }>()
+  '[Category] delete Category',
+  props<{ id: string }>()
 );
 export const deleteCategorySuccess = createAction(
   '[Category] delete Category Success',

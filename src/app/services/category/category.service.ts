@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
   private baseURL =
-    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/categories';
+    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/categories.json';
   constructor(private http: HttpClient) {}
 
   /** add, show, change and delete category */

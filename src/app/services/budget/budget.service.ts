@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BudgetService {
   private baseURL =
-    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/budgets';
+    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/budgets.json';
   constructor(private http: HttpClient) {}
 
   /** add, show, change and delete budget */

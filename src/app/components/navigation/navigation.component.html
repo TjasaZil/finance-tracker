@@ -1,14 +1,17 @@
-<nav *ngIf="navClosed"  class="backdrop-blur-sm h-screen w-screen absolute top-0 right-0 z-[9999] flex flex-col overflow-hidden">
-    <div class="main-container">
-<div class="w-full flex flex-row justify-between items-center py-5">
-    <dx-button text="Log Out" (onClick)="goToLogin()"> </dx-button>
-<dx-button text="close" (onClick)="closeNav()">close</dx-button>
-</div>
-<ul class="space-y-10 py-10 w-full flex flex-col justify-between items-end">
-    <li>categories</li>
-    <li>accounts</li>
-    <li>currencies</li>
-    <li>settings</li>
-</ul>
+<nav
+  *ngIf="!navClosed"
+  class="backdrop-blur-sm h-screen w-screen absolute top-0 right-0 z-[9999] flex flex-col overflow-hidden"
+>
+  <div class="main-container">
+    <div class="w-full flex flex-row justify-between items-center py-5">
+      <dx-button text="Log Out" (onClick)="goToLogin()"> </dx-button>
+      <dx-button text="close" (onClick)="closeNav()">close</dx-button>
     </div>
+    <ul class="space-y-10 py-10 w-full flex flex-col justify-between items-end">
+      <li>categories</li>
+      <li>accounts</li>
+      <li>currencies</li>
+      <li>settings</li>
+    </ul>
+  </div>
 </nav>

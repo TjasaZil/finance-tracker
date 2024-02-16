@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class IncomeService {
   private baseURL =
-    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/incomes';
+    'https://financetracker-970ea-default-rtdb.europe-west1.firebasedatabase.app/incomes.json';
   constructor(private http: HttpClient) {}
 
   /** add, show, change and delete income */

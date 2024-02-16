@@ -1,6 +1,13 @@
-<div class="w-full">
+<div class="w-full border border-blue-500">
   <app-navigation></app-navigation>
   <section class="main-container">
-    <dx-pie-chart> </dx-pie-chart>
+    <div *ngIf="categories$ | async as categories">
+      <div *ngFor="let category of categories">
+        <h3>{{ category.name }}</h3>
+        <p>{{ category.description }}</p>
+        <img [src]="category.imageUrl" alt="Category image" />
+      </div>
+    </div>
+    <!--<dx-pie-chart> </dx-pie-chart>-->
   </section>
 </div>
