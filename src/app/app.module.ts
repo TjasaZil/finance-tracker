@@ -13,14 +13,6 @@ import { DxButtonModule } from 'devextreme-angular';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from './environments/environment';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { categoryReducer } from './state/category/category.reducers';
-import { CategoryEffects } from './state/category/category.effects';
-import { ExpenseEffects } from './state/expense/expense.effects';
-import { expenseReducer } from './state/expense/expense.reducers';
-import { IncomeEffects } from './state/income/income.effects';
-import { incomeReducer } from './state/income/income.reducers';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,12 +23,7 @@ import { incomeReducer } from './state/income/income.reducers';
     DxButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    StoreModule.forRoot({
-      category: categoryReducer,
-      expense: expenseReducer,
-      income: incomeReducer,
-    }),
-    EffectsModule.forRoot([CategoryEffects, ExpenseEffects, IncomeEffects]),
+
     HttpClientModule,
   ],
   providers: [],

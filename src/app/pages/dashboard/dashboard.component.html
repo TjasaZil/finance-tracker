@@ -2,7 +2,7 @@
   <app-navigation></app-navigation>
   <section class="main-container">
     <h2>Categories</h2>
-    <div *ngIf="categories$ | async as categories">
+    <!-- <div *ngIf="categories$ | async as categories">
       <div *ngFor="let category of categories">
         <h3>{{ category.name }}</h3>
         <p>{{ category.description }}</p>
@@ -10,9 +10,9 @@
         <dx-button text="delete" (onClick)="deleteCategory(category.id)">
         </dx-button>
       </div>
-    </div>
+    </div>-->
     <h2>Expenses</h2>
-    <div *ngIf="expenses$ | async as expenses">
+    <!-- <div *ngIf="expenses$ | async as expenses">
       <div *ngFor="let expense of expenses">
         <p>{{ expense.amount }}</p>
         <p>{{ expense.categoryId }}</p>
@@ -21,9 +21,9 @@
         <dx-button text="delete" (onClick)="deleteExpense(expense.id)">
         </dx-button>
       </div>
-    </div>
+    </div>-->
     <h2>Income</h2>
-    <div *ngIf="incomes$ | async as incomes">
+    <!-- <div *ngIf="incomes$ | async as incomes">
       <div *ngFor="let income of incomes">
         <p>{{ income.amount }}</p>
         <p>{{ income.date }}</p>
@@ -32,7 +32,7 @@
         <dx-button text="delete" (onClick)="deleteIncome(income.id)">
         </dx-button>
       </div>
-    </div>
+    </div>-->
     <!--<dx-pie-chart> </dx-pie-chart>-->
   </section>
 </div>
